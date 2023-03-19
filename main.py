@@ -17,5 +17,17 @@ if res.status_code == 200:
   price = info[0].getText()
   print(price)
 
+URL = "https://www.olx.ua/d/uk/obyavlenie/prodam-vaz2110-IDRlKg2.html"
+res = requests.get(URL)
+
+
+
+if res.status_code == 200:
+  soup = BeautifulSoup(res.text,  features ="html.parser")
+  info = soup.find_all("h3", {"class":"css-ddweki er34gjf0"})
+  print(info)
+  price = info[0].getText()
+  print(price)
+
 
 
