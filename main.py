@@ -8,7 +8,8 @@ res = requests.get(URL)
 if res.status_code == 200:
   soup = BeautifulSoup(res.text,  features ="html.parser")
   info = soup.find_all("a", {"href":"/currencies/bitcoin/markets/"})
-  print(info[0])
+  price = info[0].getText()
+  print(price)
 
 
 
